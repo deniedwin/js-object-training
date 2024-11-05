@@ -42,3 +42,21 @@
 //     return true;
 // }
 // alert(sumSalaries(salaries));
+
+//function to multiply only the integers of the object by 2
+let menu = {
+    width: 200,
+    height: 300,
+    title: "My menu"
+};
+
+function multiplyNumeric(obj){
+    for(let key in obj){
+        if(typeof(obj[key]) === typeof(0)){
+            obj[key] *= 2;
+        }
+    }
+}
+console.log(menu);
+multiplyNumeric(menu);
+console.log(menu);
