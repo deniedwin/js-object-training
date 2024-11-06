@@ -64,9 +64,12 @@
 //function to use object map, filter and reduce
 const arr = [1,2,3,4,5];
 console.log(arr);
-const arrEven = arr.filter((num) => {return num%2 === 0}); //[2,4]
+
+const arrEven = arr.filter(num => num % 2 === 0); //[2,4]
 console.log(arrEven);
-const arrtriple = arrEven.map((num) => {return num *= 3}); //[6,12]
-console.log(arrtriple);
-const arrSum = arrtriple.reduce((total, currentItem) => {return total += currentItem}); //18
+
+const arrTriple = arrEven.map(num => num * 3); //[6,12]
+console.log(arrTriple);
+
+const arrSum = arrTriple.reduce((total, currentItem) => total + currentItem); //18
 console.log(arrSum);
