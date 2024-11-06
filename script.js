@@ -62,14 +62,37 @@
 // console.log(menu);
 
 //function to use object map, filter and reduce
-const arr = [1,2,3,4,5];
+// const arr = [1,2,3,4,5];
+// console.log(arr);
+
+// const arrEven = arr.filter(num => num % 2 === 0); //[2,4]
+// console.log(arrEven);
+
+// const arrTriple = arrEven.map(num => num * 3); //[6,12]
+// console.log(arrTriple);
+
+// const arrSum = arrTriple.reduce((total, currentItem) => total + currentItem); //18
+// console.log(arrSum);
+
+//function to change dash seperated string to camelCase string
+// const myStr = "background-image-test";
+// function camelize(str){
+//     const strSplit = str.split("-"); //split string into seperated words not including "-"
+//     //capetilize the first letters of each word except for the first word
+//     const strCap = strSplit.map((item, index) => (index === 0 ? item : (item[0].toUpperCase()) + item.slice(1)));
+//     //concat all the capet words into one
+//     const strJoin = strCap.join("");
+
+//     return strJoin;
+// }
+// camelize(myStr);
+
+//function to return values between a given range
+let arr = [5,3,8,1];
+function filterRange(arr, a, b){
+    //new array filter is run, only items that pass the test added to new array
+    let filter = arr.filter(item => (item >= a && item <= b));
+    return filter;
+}
+console.log(filterRange(arr, 1, 4));
 console.log(arr);
-
-const arrEven = arr.filter(num => num % 2 === 0); //[2,4]
-console.log(arrEven);
-
-const arrTriple = arrEven.map(num => num * 3); //[6,12]
-console.log(arrTriple);
-
-const arrSum = arrTriple.reduce((total, currentItem) => total + currentItem); //18
-console.log(arrSum);
