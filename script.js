@@ -109,7 +109,7 @@
 
 // //function to decrease array in order
 // let arr = [5, 2, 1, -10, 8];
-// arr.sort((a, b) => (b - a)); //instead of a-b assending that is ascending order
+// arr.sort((a, b) => (b - a)); //instead of a-b assending
 // console.log(arr);
 
 // //function to copy an array of strings then sort it
@@ -138,3 +138,29 @@
 // console.table(users);
 // console.table(usersMapped);
 
+// //function that gets an array of user and then sorts them by name
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+// let arr = [ pete, john, mary ];
+// function sortByAge(arr){
+//     let sorted = arr.sort((a, b) => (a.age - b.age));
+//     return sorted;
+// }
+// console.table(arr);
+// console.table(sortByAge(arr));
+
+//function to randomly reorders (shuffle) all elementes of an array with equal probability
+//sort() does not work here
+let arr = [3, 5, 7];
+//here item is declared but it is not used, we could have written anything in place
+function shuffle(arr){
+    arr.forEach((item, index) => {
+        let j = Math.floor(Math.random() * arr.length); //random number between 0 and array length - 1
+        let temp = arr[index];
+        arr[index] = arr[j];
+        arr[j] = temp;
+    });
+    return arr;
+}
+console.log(shuffle(arr));
