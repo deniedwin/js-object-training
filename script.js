@@ -94,15 +94,20 @@
 // console.log(filterRange(arr, 1, 4));
 // console.log(arr);
 
-//function to return original array changed with values between a given range
-let arr = [5,3,8,1];
-function filterRangeInPlace(arr, a, b){
-    arr.forEach((item, index) => {
-        //do not splice the actual items but what is outside this range
-        if(!(item >= a && item <= b)){
-            arr.splice(index, 1);
-        }
-    });
-}
-filterRangeInPlace(arr, 1, 4);
+// //function to return original array changed with values between a given range
+// let arr = [5,3,8,1];
+// function filterRangeInPlace(arr, a, b){
+//     arr.forEach((item, index) => {
+//         //do not splice the actual items but what is outside this range
+//         if(!(item >= a && item <= b)){
+//             arr.splice(index, 1);
+//         }
+//     });
+// }
+// filterRangeInPlace(arr, 1, 4);
+// console.log(arr);
+
+//function to decrease array in order
+let arr = [5, 2, 1, -10, 8];
+arr.sort((a, b) => (b - a)); //instead of a-b assending that is ascending order
 console.log(arr);
