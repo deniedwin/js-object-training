@@ -112,8 +112,17 @@
 // arr.sort((a, b) => (b - a)); //instead of a-b assending that is ascending order
 // console.log(arr);
 
-//function to copy an array of strings then sort it
-let arr = ["HTML", "JavaScript", "CSS"];
-let copyArrSort = arr.slice().sort(); //i can chain these two methods and it still works
-console.log(copyArrSort);
-console.log(arr);
+// //function to copy an array of strings then sort it
+// let arr = ["HTML", "JavaScript", "CSS"];
+// let copyArrSort = arr.slice().sort(); //i can chain these two methods and it still works
+// console.log(copyArrSort);
+// console.log(arr);
+
+//function to extract the names of users from an array of users
+let john = {name: "John", age: 25};
+let pete = {name: "Pete", age: 30};
+let mary = {name: "Mary", age: 28};
+let users = [john, pete, mary];
+
+let names = users.map(user => user.name);
+console.log(names);
