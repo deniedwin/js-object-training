@@ -107,7 +107,13 @@
 // filterRangeInPlace(arr, 1, 4);
 // console.log(arr);
 
-//function to decrease array in order
-let arr = [5, 2, 1, -10, 8];
-arr.sort((a, b) => (b - a)); //instead of a-b assending that is ascending order
+// //function to decrease array in order
+// let arr = [5, 2, 1, -10, 8];
+// arr.sort((a, b) => (b - a)); //instead of a-b assending that is ascending order
+// console.log(arr);
+
+//function to copy an array of strings then sort it
+let arr = ["HTML", "JavaScript", "CSS"];
+let copyArrSort = arr.slice().sort(); //i can chain these two methods and it still works
+console.log(copyArrSort);
 console.log(arr);
