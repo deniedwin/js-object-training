@@ -64,13 +64,10 @@
 //function to use object map, filter and reduce
 // const arr = [1,2,3,4,5];
 // console.log(arr);
-
 // const arrEven = arr.filter(num => num % 2 === 0); //[2,4]
 // console.log(arrEven);
-
 // const arrTriple = arrEven.map(num => num * 3); //[6,12]
 // console.log(arrTriple);
-
 // const arrSum = arrTriple.reduce((total, currentItem) => total + currentItem); //18
 // console.log(arrSum);
 
@@ -87,12 +84,25 @@
 // }
 // camelize(myStr);
 
-//function to return values between a given range
+// //function to return values between a given range
+// let arr = [5,3,8,1];
+// function filterRange(arr, a, b){
+//     //new array filter is run, only items that pass the test added to new array
+//     let filter = arr.filter(item => (item >= a && item <= b));
+//     return filter;
+// }
+// console.log(filterRange(arr, 1, 4));
+// console.log(arr);
+
+//function to return original array changed with values between a given range
 let arr = [5,3,8,1];
-function filterRange(arr, a, b){
-    //new array filter is run, only items that pass the test added to new array
-    let filter = arr.filter(item => (item >= a && item <= b));
-    return filter;
+function filterRangeInPlace(arr, a, b){
+    arr.forEach((item, index) => {
+        //do not splice the actual items but what is outside this range
+        if(!(item >= a && item <= b)){
+            arr.splice(index, 1);
+        }
+    });
 }
-console.log(filterRange(arr, 1, 4));
+filterRangeInPlace(arr, 1, 4);
 console.log(arr);
