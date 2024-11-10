@@ -123,7 +123,6 @@
 // let pete = {name: "Pete", age: 30};
 // let mary = {name: "Mary", age: 28};
 // let users = [john, pete, mary];
-
 // let names = users.map(user => user.name);
 // console.log(names);
 
@@ -131,10 +130,8 @@
 // let john = {name: "John", surname: "Smith", id: 1};
 // let pete = {name: "Pete", surname: "Hunt", id: 2};
 // let mary = {name: "Mary", surname: "Key", id: 3};
-
 // let users = [john, pete, mary];
 // let usersMapped = users.map(user => ({fullName: user.name + " " + user.surname, id: user.id}));
-
 // console.table(users);
 // console.table(usersMapped);
 
@@ -150,26 +147,32 @@
 // console.table(arr);
 // console.table(sortByAge(arr));
 
-//function to randomly reorders (shuffle) all elementes of an array with equal probability
-//sort() does not work here
-let arr = [3, 5, 7];
-//here item is declared but it is not used, we could have written anything in place
-function shuffle(arr){
-    //item variable is not used, but it is required in the forEach method
-    //could have easily used a for(;;) loop here as well
-    arr.forEach((item, index) => {
-        let j = Math.floor(Math.random() * arr.length); //random number between 0 and array length - 1
-        let temp = arr[index];
-        arr[index] = arr[j];
-        arr[j] = temp;
-    });
-    return arr;
-}
-console.log(shuffle(arr));
+// //function to randomly reorders (shuffle) all elementes of an array with equal probability
+// //sort() does not work here
+// let arr = [3, 5, 7];
+// //here item is declared but it is not used, we could have written anything in place
+// function shuffle(arr){
+//     //item variable is not used, but it is required in the forEach method
+//     //could have easily used a for(;;) loop here as well
+//     arr.forEach((item, index) => {
+//         let j = Math.floor(Math.random() * arr.length); //random number between 0 and array length - 1
+//         let temp = arr[index];
+//         arr[index] = arr[j];
+//         arr[j] = temp;
+//     });
+//     return arr;
+// }
+// console.log(shuffle(arr));
 
-//function to get the average age of
+//function to get the average age of different users
 let john = { name: "John", age: 25 };
 let pete = { name: "Pete", age: 30 };
 let mary = { name: "Mary", age: 29 };
-
-let arr = [ john, pete, mary ]; 
+let arr = [ john, pete, mary ];
+function getAverageAge(arr){
+    let sum = arr.reduce((sum, user) => (sum + user.age), 0);
+    let avg = sum/arr.length
+    console.log(sum);
+    console.log(avg);
+}
+getAverageAge(arr);
