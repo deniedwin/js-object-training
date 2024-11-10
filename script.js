@@ -176,15 +176,35 @@
 // }
 // getAverageAge(arr);
 
-//function to check duplicated of an array and return only unique items
-function unique(arr) {
-    let unique = [];
-    arr.forEach((item) => {
-        if(!unique.includes(item)){
-            unique.push(item);
-        }
-    });
-    console.log(unique);
+// //function to check duplicates of an array and return only unique items
+// //to a new array
+// function unique(arr) {
+//     let unique = [];
+//     arr.forEach((item) => {
+//         if(!unique.includes(item)){
+//             unique.push(item);
+//         }
+//     });
+//     console.log(unique);
+// }
+// let strings = ["Hare", "Krishna", "Hare", "Krishna", "Krishna", "Krishna", "Hare", "Hare", ":-O"];
+// unique(strings);
+
+//function to create keyed objects from array
+let users = [
+    {id: 'john', name: "John Smith", age: 20},
+    {id: 'ann', name: "Ann Smith", age: 24},
+    {id: 'pete', name: "Pete Peterson", age: 31},
+];
+
+function groupById(users) {
+    let keyedUsers = {};
+    keyedUsers = users.reduce((acu, user) => {
+        acu[user.id] = user; // Set the user id as the key and assign the user object as the value
+        return acu;           // Return the accumulator for the next iteration
+    }, {});                   // Start with an empty object as the accumulator
+
+    return keyedUsers;
 }
-let strings = ["Hare", "Krishna", "Hare", "Krishna", "Krishna", "Krishna", "Hare", "Hare", ":-O"];
-unique(strings);
+let usersById = groupById(users);
+console.table(usersById);
