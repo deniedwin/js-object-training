@@ -155,6 +155,8 @@
 let arr = [3, 5, 7];
 //here item is declared but it is not used, we could have written anything in place
 function shuffle(arr){
+    //item variable is not used, but it is required in the forEach method
+    //could have easily used a for(;;) loop here as well
     arr.forEach((item, index) => {
         let j = Math.floor(Math.random() * arr.length); //random number between 0 and array length - 1
         let temp = arr[index];
@@ -164,3 +166,10 @@ function shuffle(arr){
     return arr;
 }
 console.log(shuffle(arr));
+
+//function to get the average age of
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 29 };
+
+let arr = [ john, pete, mary ]; 
