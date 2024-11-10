@@ -164,15 +164,27 @@
 // }
 // console.log(shuffle(arr));
 
-//function to get the average age of different users
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 29 };
-let arr = [ john, pete, mary ];
-function getAverageAge(arr){
-    let sum = arr.reduce((sum, user) => (sum + user.age), 0);
-    let avg = sum/arr.length
-    console.log(sum);
-    console.log(avg);
+// //function to get the average age of different users
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
+// let arr = [ john, pete, mary ];
+// function getAverageAge(arr){
+//     let sum = arr.reduce((sum, user) => (sum + user.age), 0);
+//     let avg = sum/arr.length
+//     return avg;
+// }
+// getAverageAge(arr);
+
+//function to check duplicated of an array and return only unique items
+function unique(arr) {
+    let unique = [];
+    arr.forEach((item) => {
+        if(!unique.includes(item)){
+            unique.push(item);
+        }
+    });
+    console.log(unique);
 }
-getAverageAge(arr);
+let strings = ["Hare", "Krishna", "Hare", "Krishna", "Krishna", "Krishna", "Hare", "Hare", ":-O"];
+unique(strings);
