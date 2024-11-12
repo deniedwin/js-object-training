@@ -190,21 +190,41 @@
 // let strings = ["Hare", "Krishna", "Hare", "Krishna", "Krishna", "Krishna", "Hare", "Hare", ":-O"];
 // unique(strings);
 
-//function to create keyed objects from array
-let users = [
-    {id: 'john', name: "John Smith", age: 20},
-    {id: 'ann', name: "Ann Smith", age: 24},
-    {id: 'pete', name: "Pete Peterson", age: 31},
+// //function to create keyed objects from array
+// let users = [
+//     {id: 'john', name: "John Smith", age: 20},
+//     {id: 'ann', name: "Ann Smith", age: 24},
+//     {id: 'pete', name: "Pete Peterson", age: 31},
+// ];
+
+// function groupById(users) {
+//     let keyedUsers = {};
+//     keyedUsers = users.reduce((acu, user) => {
+//         acu[user.id] = user; // Set the user id as the key and assign the user object as the value
+//         return acu;           // Return the accumulator for the next iteration
+//     }, {});                   // Start with an empty object as the accumulator
+
+//     return keyedUsers;
+// }
+// let usersById = groupById(users);
+// console.table(usersById);
+
+//function to return the book titles of an array of objects
+const books = [
+    {
+      title: 'Book',
+      author: 'Name'
+    },
+    {
+      title: 'Book2',
+      author: 'Name2'
+    }
 ];
-
-function groupById(users) {
-    let keyedUsers = {};
-    keyedUsers = users.reduce((acu, user) => {
-        acu[user.id] = user; // Set the user id as the key and assign the user object as the value
-        return acu;           // Return the accumulator for the next iteration
-    }, {});                   // Start with an empty object as the accumulator
-
-    return keyedUsers;
-}
-let usersById = groupById(users);
-console.table(usersById);
+function getTheTitles(arr) {
+    let arrBooks = [];
+    arr.forEach(item => {
+        arrBooks.push(item.title);
+    });
+    return arrBooks;
+};
+console.log(getTheTitles(books));
