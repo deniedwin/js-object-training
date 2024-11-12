@@ -209,22 +209,65 @@
 // let usersById = groupById(users);
 // console.table(usersById);
 
-//function to return the book titles of an array of objects
-const books = [
+// //function to return the book titles of an array of objects
+// const books = [
+//     {
+//       title: 'Book',
+//       author: 'Name'
+//     },
+//     {
+//       title: 'Book2',
+//       author: 'Name2'
+//     }
+// ];
+// function getTheTitles(arr) {
+//     let arrBooks = [];
+//     arr.forEach(item => {
+//         arrBooks.push(item.title);
+//     });
+//     return arrBooks;
+// };
+// console.log(getTheTitles(books));
+
+function findTheOldest(arr) {
+    const d = new Date();
+    let old = 0;
+    let oldIndex = 0;
+    arr.forEach((item, index) => {
+        if(item.yearOfBirth === undefined){
+            item.yearOfBirth = d.getFullYear();
+        }
+        else if(item.yearOfDeath === undefined){
+            item.yearOfDeath = d.getFullYear();
+        }
+        
+        let age = item.yearOfDeath - item.yearOfBirth;
+        if(age > old){
+            old = age;
+            oldIndex = index;
+        }
+    });
+    return arr[oldIndex];
+};
+const people = [
     {
-      title: 'Book',
-      author: 'Name'
+      name: "Carly",
+      yearOfBirth: 1066,
+    //   yearOfDeath: 1970,
+      //28
     },
     {
-      title: 'Book2',
-      author: 'Name2'
-    }
-];
-function getTheTitles(arr) {
-    let arrBooks = [];
-    arr.forEach(item => {
-        arrBooks.push(item.title);
-    });
-    return arrBooks;
-};
-console.log(getTheTitles(books));
+      name: "Ray",
+      yearOfBirth: 1962,
+      yearOfDeath: 2011,
+      //49
+    },
+    {
+      name: "Jane",
+      yearOfBirth: 1912,
+      yearOfDeath: 1941,
+      //29
+    },
+]
+// findTheOldest(people);
+console.log(findTheOldest(people));
